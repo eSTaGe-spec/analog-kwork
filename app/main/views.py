@@ -84,3 +84,8 @@ class UpdateProfile(UpdateView):
             kwargs={'username': self.object.user.username}
         )
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['object'] = self.object
+        return context
+
