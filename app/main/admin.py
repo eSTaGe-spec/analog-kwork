@@ -1,3 +1,16 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Executor, Customer
+
+
+@admin.register(Executor)
+class ExecutorAdmin(admin.ModelAdmin):
+    list_display = ['user', 'name', 'phone', 'email']
+    list_display_links = ['user']
+
+
+@admin.register(Customer)
+class ExecutorAdmin(admin.ModelAdmin):
+    list_display = ['user', 'name', 'phone', 'email']
+    list_display_links = ['user']
+
