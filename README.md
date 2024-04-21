@@ -1,6 +1,6 @@
 ## Использованиe
 1. Клонирование репозитория(Windows)
-    ```https://github.com/eSTaGe-spec/analog-kwork.git```
+    https://github.com/eSTaGe-spec/analog-kwork.git
 2. Создание виртуального окружения
     ```python -m venv venv```
 3. Активация виртуального окружения
