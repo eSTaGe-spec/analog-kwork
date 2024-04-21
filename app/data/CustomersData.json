@@ -1,0 +1,30 @@
+[
+{
+  "model": "main.customer",
+  "pk": 2,
+  "fields": {
+    "user": 33,
+    "name": "Младший Админ",
+    "about_me": "Младший Админ Младший Админ",
+    "work_experience": "10 лет",
+    "phone": "12341234232",
+    "email": "egor@mail.ru",
+    "status": "customer",
+    "avatar": "profile/user_admin2/avatar/123123.jpg"
+  }
+},
+{
+  "model": "main.customer",
+  "pk": 3,
+  "fields": {
+    "user": 34,
+    "name": "Игорь",
+    "about_me": "Игорь на заводе пахает:(",
+    "work_experience": "Без опыта",
+    "phone": "74125632541",
+    "email": "bmb@mail.ru",
+    "status": "customer",
+    "avatar": "profile/user_elsik/avatar/photo_2023-11-09_12-21-41.jpg"
+  }
+}
+]
