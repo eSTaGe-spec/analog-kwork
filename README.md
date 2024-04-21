@@ -2,7 +2,7 @@
 1. Клонирование репозитория(Windows)
     ```git clone https://github.com/eSTaGe-spec/analog-kwork.git```
 2. Создание виртуального окружения
-    `python -m venv venv`
+    ```bash python -m venv venv```
 3. Активация виртуального окружения
     ```venv\Scripts\activate```
 4. Переход в папку app
