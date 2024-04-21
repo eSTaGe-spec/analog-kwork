@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Главная{% endblock title %}
+
+{% block content %}
+
+<style>
+    .card-img-top {
+        max-width: 150px;
+        border-radius: 10px; 
+    }
+    
+</style>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Заказчики</h2>
+        {% for customer in customers %}
+        <div class="card mb-3">
+            <img src="{% if customer.avatar %}{{ customer.avatar.url }}{% else %}{% static "main/img/Not_found_image.png" %}{% endif %}" class="card-img-top" alt="Avatar">
+            <div class="card-body">
+                <h5 class="card-title">Пользователь: {% firstof customer.name customer.user.username %}</h5>
+                <p class="card-text">Статус: {{ customer_status }}</p>
+                <p class="card-text">Номер телефона: {{ customer.phone }}</p>
+                <p class="card-text">Email: {{ customer.email }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="col-md-6">
+        <h2>Исполнители</h2>
+        {% for executor in executors %}
+        <div class="card mb-3">
+            <img src="{% if executor.avatar %}{{ executor.avatar.url }}{% else %}{% static "main/img/Not_found_image.png" %}{% endif %}" class="card-img-top" alt="Avatar">
+            <div class="card-body">
+                <h5 class="card-title">Пользователь: {% firstof executor.name executor.user.username %}</h5>
+                <p class="card-text">Статус: {{ executor_status }}</p>
+                <p class="card-text">Номер телефона: {{ executor.phone }}</p>
+                <p class="card-text">Email: {{ executor.email }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

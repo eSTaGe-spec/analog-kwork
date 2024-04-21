@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Обновление профиля{% endblock title %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Обновление профиля</h3>
+            </div>
+            <div class="modal-body">
+                {{ form.as_p }}
+                <button class="btn btn-primary rounded" type="submit">Обновить</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% comment %} <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Обновление профиля</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    
+                    <div class="card-body">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Ваше Имя">
+                    </div>
+
+                    <div class="card-body">
+                        <label for="about_me">Расскажите о себе</label>
+                        <input type="text" class="form-control" id="about_me" name="about_me" placeholder="О вас">
+                    </div>
+
+                    <div class="card-body">
+                        <label for="work_experience">Ваш опыт работы</label>
+                        <input type="text" class="form-control" id="work_experience" name="work_experience" placeholder="Ваш опыт работы">
+                    </div>
+
+                    <div class="card-body">
+                        <label for="phone">Ваш номер телефона</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Ваш номер телефона">
+                    </div>
+
+                    <div class="card-body">
+                        <label for="email">Ваш Email</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Ваш Email">
+                    </div>
+            <div class="form-floating mb-3">
+                <div class="card-body">
+                    <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*" placeholder="Ваше аватар">
+                </div> 
+            </div>
+            <button class="btn btn-primary rounded" type="submit">Обновить</button>
+        </div>
+    </div>
+    
+</form> {% endcomment %}
+{% endblock content %}
+

@@ -13,7 +13,7 @@ class Executor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='Логин пользователя')
     name = models.CharField(max_length=100, null=True, blank=True, verbose_name='Имя пользователя')
     about_me = models.TextField(null=True, blank=True, verbose_name='Информация о пользователе')
-    work_experience = models.CharField(max_length=2, null=True, blank=True, verbose_name='Опыт работы', default=0)
+    work_experience = models.CharField(max_length=100, null=True, blank=True, verbose_name='Опыт работы', default=0)
     phone = models.CharField(max_length=15, null=True, blank=True, verbose_name='Номер телефона')
     email = models.EmailField(null=True, blank=True, verbose_name='Email')
     status = models.CharField(max_length=20, default='executor', verbose_name='Статус '
@@ -33,7 +33,7 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='Логин пользователя')
     name = models.CharField(max_length=100, null=True, blank=True, verbose_name='Имя пользователя')
     about_me = models.TextField(null=True, blank=True, verbose_name='Информация о пользователе')
-    work_experience = models.CharField(max_length=2, null=True, blank=True, verbose_name='Опыт работы', default=0)
+    work_experience = models.CharField(max_length=100, null=True, blank=True, verbose_name='Опыт работы', default=0)
     phone = models.CharField(max_length=15, null=True, blank=True, verbose_name='Номер телефона')
     email = models.EmailField(null=True, blank=True, verbose_name='Email')
     status = models.CharField(max_length=20, default='customer', verbose_name='Статус '
