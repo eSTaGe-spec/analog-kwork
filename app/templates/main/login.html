@@ -16,21 +16,21 @@
               </div>
               <div class="modal-body">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="login" name="login" placeholder="name@example.com">
+                    <input type="text" class="form-control" id="login" name="username" placeholder="name@example.com">
                     <label for="login">Ваш логин</label>
                  </div>
                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="password" name="password1" placeholder="Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     <label for="password">Ваш пароль</label>
                  </div>  
               </div>
               <div class="modal-footer">
                 <h6 class="text-muted">Нет аккаунта? <a href="{% url "main:register" %}">Регистрация</a></h6>
-                <button type="button" class="btn btn-primary rounded" type="submit">Вход</button> 
+                <button class="btn btn-primary rounded" type="submit">Вход</button> 
               </div>
               
             </div>
-        </div>
+          </div>
     </form>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

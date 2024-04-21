@@ -1,30 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}Профиль{% endblock title %}
+
 {% block content %}
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-            <h3 class="modal-title">Профиль</h3>
+            <h3 class="modal-title">Профиль {{ profile.user.username }}</h3>
         </div>
         <div class="modal-body">
             <div class="form-floating mb-3">
-                <img src="{% static "main/img/imgpic.jpg" %}" class="card-img-top">
+                {% if profile.avatar %}
+                <img src="{{ profile.avatar.url }}" class="card-img-top">
+                {% else %}
+                <img src="{% static "main/img/Not_found_image.png" %}" class="card-img-top">
+                {% endif %}
                 <div class="card-body">
-                  <h5 class="card-title text-primary">Имя</h5>
-                  <p class="card-text">Статус: Исполнитель</p>
+                  <h5 class="card-title text-primary">Имя: {{ profile.name }}</h5>
+                  <p class="card-text">Статус: {{ status }}</p>
                 </div>
         <div class="form-floating mb-3">
             <div class="card-body">
                 <h5 class="card-title text-primary">Обо мне</h5>
-                <p class="card-text">Я работал на заводе у жены роды</p>
-                <h5 class="card-title text-primary">Опыт работы - 0 лет</h5>
-                <br>
+                <p class="card-text">{{ profile.about_me }}</p>
+                <h5 class="card-title text-primary">Опыт работы - {{ profile.work_experience }}</h5>
+                <br>  
                 <h5 class="card-title text-primary">Телефон</h5>
-                <p class="card-text">+78675654562</p>
+                <p class="card-text">{{ profile.phone }}</p>
                 <h5 class="card-title text-primary">Почта</h5>
-                <p class="card-text">example@mail.ru</p>
-                <a href="" class="btn btn-primary rounded">Редактировать профиль</a>
+                <p class="card-text">{{ profile.email }}</p>
+                <a href="{% url "main:profile_update" pk=profile.id%}" class="btn btn-primary rounded">Редактировать профиль</a>
             </div> 
         </div>
         
